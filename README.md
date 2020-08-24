@@ -42,7 +42,7 @@ This is not the best security model, but considering that EC-CUBE has no securit
 0. Make the C program into a binary by executing `make`.
 1. Run the program, giving it one argument: the name of the EC-CUBE 4.x database in the MySQL / PostgreSQL / SQLite database that is being used.
 2. The program will generate SQL (that is compatible with MySQL and possibly other databases) to standard output. Save this output.
-3. Using either the MySQL client or another tool (like phpMyAdmin), execute the generated URL.
+3. Using either the MySQL client or another tool (like phpMyAdmin), execute the generated SQL.
     - The SQL is intended to be run against a clean database, but it can be run against an EC-CUBE instance that already has authority entries and roles. It will not delete any existing entries. However, because it uses low numbered ordinals for the unique key ID, most likely some entries will conflict and fail to add if entries already exist. You can edit the IDs to different numbers; the ACL system is not dependent on the value of the numeric ID keys.
 3. After adding the entries, you will need to delete the cache via the `キャッシュ削除` button in コンテンツ管理 under キャッシュ管理 to reflect the changes to the admin web interface.
 4. In the メンバー会員 section, you will need to edit each member and change their 権限 (permission) to one of the 64 new added combinations.
